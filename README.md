@@ -20,6 +20,32 @@ Este sistema es una herramienta de gestión académica para la Escuela Superior 
 *    Importa el script de la base de datos escom_academico.sql a tu servidor MySQL.
 *    Accede a index.php en tu servidor local para comenzar a utilizar el sistema.
 
+# Para el equipo de desarrollo
+Esta es una sugerencia sobre la estructura de los archivos.
+├── README.md: Este archivo, contiene información sobre el proyecto y cómo utilizarlo.
+├── .gitignore: Lista los archivos y carpetas que Git debería ignorar.
+├── assets/: Contiene archivos estáticos como CSS, JavaScript y imágenes.
+│ ├── css/: Contiene archivos de hojas de estilo.
+│ ├── js/: Contiene archivos de scripts de JavaScript.
+│ └── img/: Contiene imágenes.
+├── includes/: Contiene scripts PHP que se incluyen en otros archivos.
+│ ├── config.php: Maneja la configuración del proyecto.
+│ ├── database.php: Maneja la conexión a la base de datos.
+│ └── functions.php: Contiene funciones útiles que se utilizan en todo el proyecto.
+├── modules/: Contiene diferentes módulos de la aplicación.
+│ ├── profesor/: Módulo para manejar operaciones relacionadas con profesores.
+│ │ ├── index.php: Muestra una lista de profesores.
+│ │ ├── create.php: Permite crear un nuevo profesor.
+│ │ ├── update.php: Permite modificar la información de un profesor.
+│ │ └── delete.php: Permite eliminar un profesor.
+│ └── materia/: Módulo para manejar operaciones relacionadas con las materias.
+│ ├── index.php: Muestra una lista de materias.
+│ ├── create.php: Permite crear una nueva materia.
+│ ├── update.php: Permite modificar la información de una materia.
+│ └── delete.php: Permite eliminar una materia.
+├── dashboard.php: La página principal del dashboard después de iniciar sesión.
+└── index.php: La página principal de la aplicación, podría contener el formulario de inicio de sesión o una página de bienvenida.
+
 # Contribución
 
 Las contribuciones son bienvenidas. Siéntete libre de abrir un issue o hacer un pull request.
