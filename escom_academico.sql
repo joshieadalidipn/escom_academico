@@ -105,41 +105,41 @@ CREATE TABLE `profesores` (
 --
 -- Indexes for table `actividades`
 --
-ALTER TABLE `actividades`
+ALTER TABLE actividad
   ADD PRIMARY KEY (`id_actividad`);
 
 --
 -- Indexes for table `actividades_profesor`
 --
-ALTER TABLE `actividades_profesor`
+ALTER TABLE actividad_profesor
   ADD PRIMARY KEY (`id_profesor`,`id_actividad`,`semestre`),
   ADD KEY `id_actividad` (`id_actividad`);
 
 --
 -- Indexes for table `administradores`
 --
-ALTER TABLE `administradores`
+ALTER TABLE administrador
   ADD PRIMARY KEY (`id_administrador`),
   ADD UNIQUE KEY `correo` (`correo`);
 
 --
 -- Indexes for table `encuestas`
 --
-ALTER TABLE `encuestas`
+ALTER TABLE encuesta
   ADD PRIMARY KEY (`id_profesor`,`id_materia`,`semestre`),
   ADD KEY `id_materia` (`id_materia`);
 
 --
 -- Indexes for table `materias`
 --
-ALTER TABLE `materias`
+ALTER TABLE materia
   ADD PRIMARY KEY (`id_materia`);
 
 --
 -- Indexes for table `profesores`
 --
-ALTER TABLE `profesores`
-  ADD PRIMARY KEY (`id_profesor`),
+ALTER TABLE profesor
+  ADD PRIMARY KEY (id),
   ADD UNIQUE KEY `correo` (`correo`);
 
 --
@@ -149,26 +149,26 @@ ALTER TABLE `profesores`
 --
 -- AUTO_INCREMENT for table `actividades`
 --
-ALTER TABLE `actividades`
+ALTER TABLE actividad
   MODIFY `id_actividad` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `administradores`
 --
-ALTER TABLE `administradores`
+ALTER TABLE administrador
   MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `materias`
 --
-ALTER TABLE `materias`
+ALTER TABLE materia
   MODIFY `id_materia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `profesores`
 --
-ALTER TABLE `profesores`
-  MODIFY `id_profesor` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE profesor
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -177,16 +177,16 @@ ALTER TABLE `profesores`
 --
 -- Constraints for table `actividades_profesor`
 --
-ALTER TABLE `actividades_profesor`
-  ADD CONSTRAINT `actividades_profesor_ibfk_1` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
-  ADD CONSTRAINT `actividades_profesor_ibfk_2` FOREIGN KEY (`id_actividad`) REFERENCES `actividades` (`id_actividad`);
+ALTER TABLE actividad_profesor
+  ADD CONSTRAINT `actividades_profesor_ibfk_1` FOREIGN KEY (`id_profesor`) REFERENCES profesor (id),
+  ADD CONSTRAINT `actividades_profesor_ibfk_2` FOREIGN KEY (`id_actividad`) REFERENCES actividad (`id_actividad`);
 
 --
 -- Constraints for table `encuestas`
 --
-ALTER TABLE `encuestas`
-  ADD CONSTRAINT `encuestas_ibfk_1` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
-  ADD CONSTRAINT `encuestas_ibfk_2` FOREIGN KEY (`id_materia`) REFERENCES `materias` (`id_materia`);
+ALTER TABLE encuesta
+  ADD CONSTRAINT `encuestas_ibfk_1` FOREIGN KEY (`id_profesor`) REFERENCES profesor (id),
+  ADD CONSTRAINT `encuestas_ibfk_2` FOREIGN KEY (`id_materia`) REFERENCES materia (`id_materia`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

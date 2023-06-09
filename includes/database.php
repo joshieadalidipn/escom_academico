@@ -1,14 +1,28 @@
 <?php
-$servername = "localhost";
-$username = "root";  //Tu nombre de usuario de MySQL
-$password = "";  //Tu contraseña de MySQL
 
-// Crear conexión
-$conn = new mysqli($servername, $username, $password);
+class Database
+{
+    public $conn;
+    private $servername = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $dbname = "escom_academico";
 
-// Verificar conexión
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    public function __construct()
+    {
+        try {
+            $this->conn = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
+            // Establecer el modo de error de PDO a excepción
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Connected successfully";
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+        }
+    }
+
+    // Función para obtener la conexión
+    public function getConnection()
+    {
+        return $this->conn;
+    }
 }
-echo "Connected successfully";
-?>
