@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
+    <link rel="preload" href="../css/Register.css" as="style">
+    <link href="../css/Register.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="escom">
+            <a href="https://www.escom.ipn.mx/"><img  class="picture" src="../img/escudoESCOM.png"></a>
+            <div>
+                <h2>ESCOM</h2>
+                <p>Escuela Superior de Cómputo</p>
+            </div>
+        </div>
+        <div class="ipn">
+            <div>
+                <h3>Instituto Politecnico Nacional</h3>
+                <p>"La Tecnica al Servicio de la Patria"</p>
+            </div>
+            <img src="../img/escudoIPN.png" class="picture">
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="left">
+                <form class="form">
+                    <legend>Register</legend>
+                    <div class="input-block">
+                        <input class="input" type="text" id="name" required="">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="input" type="text" id="last_name" required="">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="input" type="text" id="email" required="">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="input" type="password" id="pass" required="">
+                        <label for="pass">Password</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="input" type="password" id="rep_pass" required="">
+                        <label for="rep_pass">Repeat your password</label>
+                    </div>
+                    <div class="input-block">
+                    <span>Occupation</span>
+                    <div class="aline">
+                        <select name="occupation" id="occupation" class="buttons" required="">
+                            <option value="manager">Manager</option>
+                            <option value="teacher">Teacher</option>
+                        </select>
+                        <button class="buttons">Submit</button>
+                    </div>
+                </div>
+                </form>
+                <div class="container">
+            </div>
+    </main>
+</body>
+</html>
